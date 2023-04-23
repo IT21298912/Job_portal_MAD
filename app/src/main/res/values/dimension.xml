@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="Header_text_Size">30sp</dimen>
+    <dimen name="Textbox_headers">20sp</dimen>
+    <dimen name="textbox_tex">18dp</dimen>
+    <dimen name="layout_height_edttext">50dp</dimen>
+    <dimen name="layout_marginTop">12dp</dimen>
+    <dimen name="Linear_padding">32dp</dimen>
+    <dimen name="Linear_height">603dp</dimen>
+    <dimen name="Linear_weight">384dp</dimen>
+    <dimen name="button_width">172dp</dimen>
+    <dimen name="button_height">59dp</dimen>
+    <dimen name="womenIMGWidth">282dp</dimen>
+    <dimen name="womenIMGHeight">306dp</dimen>
+    <dimen name="IntroIMGWidth">857dp</dimen>
+    <dimen name="IntroIMGHeight">484dp</dimen>
+    <dimen name="introlayoutWidth">391dp</dimen>
+    <dimen name="introlayoutheight">387dp</dimen>
+    <dimen name="Recyler_View_height">569dp</dimen>
+    <dimen name="Recycler_View_margin_top">250dp</dimen>
+    <dimen name="samll_texes">16dp</dimen>
+    <dimen name="smaltexes_margintop">32dp</dimen>
+    <dimen name="listitem_textsize">16dp</dimen>
+    <dimen name="listitembtwidth">100dp</dimen>
+    <dimen name="listitembtnheight">45dp</dimen>
+    <dimen name="listitemtitleimgwidth">80dp</dimen>
+    <dimen name="listitemtitleheight">80dp</dimen>
+
+
+
+
+</resources>
