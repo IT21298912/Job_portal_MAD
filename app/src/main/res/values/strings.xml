@@ -82,7 +82,7 @@
 
 
     <!--buttons-->
-    <string name="addcheck">Add to wishlist</string>
+    <string name="addcheck">Delete</string>
     <string name="appl">Apply</string>
     <string name="del">Delete</string>
 

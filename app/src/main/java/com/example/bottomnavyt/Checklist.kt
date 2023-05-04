@@ -7,6 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.bottomnavyt.database.AppDatabase
+import com.example.bottomnavyt.database.repositeries.Jobrepository
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -46,6 +51,34 @@ class Checklist : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_settings, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+
+        // Retrieve data from the Intent
+        val myVariable = arguments?.getString("myKey")
+
+        val last=myVariable.toString()
+
+        val fragmentContext = requireContext()
+        val repository = Jobrepository(AppDatabase.getDatabase(fragmentContext))
+        val recyclerView: RecyclerView = view.findViewById(R.id.applyjobrec)
+        val ui = fragmentContext
+        val adapter = Applyadapter(last)
+
+        recyclerView.adapter = adapter
+        recyclerView.layoutManager = LinearLayoutManager(ui)
+
+
+        CoroutineScope(Dispatchers.IO).launch {
+            val data = repository.getAllappjobs(last)
+            adapter.setData(data, ui)
+        }
+
+
+
     }
 
     companion object {
