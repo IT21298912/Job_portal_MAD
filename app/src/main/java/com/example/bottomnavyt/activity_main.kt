@@ -1,13 +1,16 @@
 package com.example.bottomnavyt
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Window
 import android.view.WindowManager
+import android.widget.Button
 import android.widget.TextView
 
 class activity_main : AppCompatActivity() {
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -22,6 +25,17 @@ class activity_main : AppCompatActivity() {
         selectebtn.setOnClickListener(){
             val Intent = Intent(this,select::class.java)
             startActivity(Intent)
+
+        }
+
+
+        val Admin = findViewById<Button>(R.id.admin)
+
+        Admin.setOnClickListener {
+
+            val Intent = Intent(this,AdminIntro::class.java)
+            startActivity(Intent)
+
 
         }
     }

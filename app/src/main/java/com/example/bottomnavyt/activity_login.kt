@@ -41,9 +41,9 @@ class activity_login : AppCompatActivity() {
         userDao = appDatabase.getuserDao()
         repository = UserRepositiry(appDatabase)
 
-        emailEditText = findViewById(R.id.emaillog)
-        passwordEditText = findViewById(R.id.logpwd)
-        loginButton = findViewById(R.id.logorg)
+        emailEditText = findViewById(R.id.Alogemaildt)
+        passwordEditText = findViewById(R.id.Alogpwdt)
+        loginButton = findViewById(R.id.Alogrg)
 
         loginButton.setOnClickListener {
             val email = emailEditText.text.toString()
@@ -103,7 +103,7 @@ class activity_login : AppCompatActivity() {
 
     private fun callActivity(){
 
-        emailEditText = findViewById(R.id.emaillog)
+        emailEditText = findViewById(R.id.Alogemaildt)
         val email = emailEditText.text.toString()
 
         val intent = Intent(this,MainActivity::class.java).also {

@@ -35,7 +35,7 @@ class activity_signup : AppCompatActivity() {
         userDao = appDatabase.getuserDao()
         repository = UserRepositiry(appDatabase)
 
-        val signupbtn = findViewById<Button>(R.id.signuporg)
+        val signupbtn = findViewById<Button>(R.id.Asigbtn)
 
         signupbtn.setOnClickListener{
 
@@ -57,10 +57,10 @@ class activity_signup : AppCompatActivity() {
 
     private fun writeData(repository:UserRepositiry){
 
-        val nameEditText = findViewById<EditText>(R.id.namesignedt)
-        val emailEditText = findViewById<EditText>(R.id.emailsignedt)
-        val passwordEditText = findViewById<EditText>(R.id.passwrdsigin)
-        val repasswordEditText = findViewById<EditText>(R.id.repwdsign)
+        val nameEditText = findViewById<EditText>(R.id.Anamedt)
+        val emailEditText = findViewById<EditText>(R.id.Aemaiedt)
+        val passwordEditText = findViewById<EditText>(R.id.Apassedt)
+        val repasswordEditText = findViewById<EditText>(R.id.repassedt)
 
 
         val name = nameEditText.text.toString()

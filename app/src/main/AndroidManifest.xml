@@ -14,6 +14,18 @@
         android:theme="@style/Theme.BottomNavYT"
         tools:targetApi="31">
         <activity
+            android:name=".selectmanage"
+            android:exported="false" />
+        <activity
+            android:name=".Admin_signup"
+            android:exported="false" />
+        <activity
+            android:name=".Admin_login"
+            android:exported="false" />
+        <activity
+            android:name=".AdminIntro"
+            android:exported="false" />
+        <activity
             android:name=".activity_signup"
             android:exported="false" />
         <activity

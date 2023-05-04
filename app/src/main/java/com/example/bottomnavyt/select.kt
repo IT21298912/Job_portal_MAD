@@ -17,7 +17,7 @@ class select : AppCompatActivity() {
         setContentView(R.layout.activity_select)
 
 
-        val loginpagebtn = findViewById<Button>(R.id.loginbtn)
+        val loginpagebtn = findViewById<Button>(R.id.Alogbtn)
 
         loginpagebtn.setOnClickListener(){
             val Intent = Intent(this,activity_login::class.java)
@@ -26,7 +26,7 @@ class select : AppCompatActivity() {
         }
 
 
-        val registerpagebtn = findViewById<Button>(R.id.registerbtn)
+        val registerpagebtn = findViewById<Button>(R.id.Aregbtn)
 
         registerpagebtn.setOnClickListener(){
             val Intent = Intent(this,activity_signup::class.java)
