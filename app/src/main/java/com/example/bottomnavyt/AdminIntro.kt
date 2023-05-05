@@ -16,7 +16,15 @@ class AdminIntro : AppCompatActivity() {
         val loginpagebtn = findViewById<Button>(R.id.Alogbtn)
 
         loginpagebtn.setOnClickListener(){
-            val Intent = Intent(this,activity_login::class.java)
+            val Intent = Intent(this,Admin_login::class.java)
+            startActivity(Intent)
+
+        }
+
+        val signup = findViewById<Button>(R.id.Aregbtn)
+
+        signup.setOnClickListener(){
+            val Intent = Intent(this,Admin_signup::class.java)
             startActivity(Intent)
 
         }

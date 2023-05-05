@@ -1,6 +1,7 @@
 package com.example.bottomnavyt
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -91,6 +92,7 @@ class Profile : Fragment() {
         phone= view.findViewById(R.id.phedt)
         val updatebtn= view.findViewById<Button>(R.id.upbtn)
         val delbtn= view.findViewById<Button>(R.id.delbtn)
+        val logout = view.findViewById<Button>(R.id.logout)
 
 
 
@@ -120,6 +122,12 @@ class Profile : Fragment() {
 
         }
 
+        logout.setOnClickListener {
+
+            val intent = Intent(requireContext(), activity_login::class.java)
+            startActivity(intent)
+        }
+
 
         updatebtn.setOnClickListener{
 
@@ -135,6 +143,20 @@ class Profile : Fragment() {
 
 
             updateUdetail(repository,last,countrystr,skillstr,addstr,phonestr,unamestr)
+
+        }
+
+        delbtn.setOnClickListener {
+
+            val intent = Intent(requireContext(), activity_login::class.java)
+            startActivity(intent)
+
+            GlobalScope.launch(Dispatchers.IO) {
+
+                repository.deleteUserByEmail(last)
+            }
+
+
 
         }
 

@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="13dp"
         android:backgroundTint="@color/green"
-        android:text="Add Admin"
+        android:text="Add Job"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

@@ -15,6 +15,8 @@ class UserRepositiry (
     fun login(email: String, password: String) = db.getuserDao().login(email, password)
     fun getuserdata(email: String)=db.getuserDao().getuserdata(email)
 
+    suspend fun deleteUserByEmail(email: String) = db.getuserDao().deleteUserByEmail(email)
+
     suspend fun update(country :String,skill :String,address :String,phone:String,uname: String,email: String)=db.getuserDao().update(country, skill, address, phone, uname, email)
 
 

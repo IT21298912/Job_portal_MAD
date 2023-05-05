@@ -23,4 +23,8 @@ interface Admindao {
     @Query("SELECT * FROM Admin_table WHERE Aemail = :email AND Apassword = :password")
     fun login(email: String, password: String): Admin
 
+
+
+
+
 }

@@ -7,7 +7,7 @@
     tools:context=".selectmanage">
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/Jman"
         android:layout_width="193dp"
         android:layout_height="69dp"
         android:layout_marginStart="122dp"
@@ -18,7 +18,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.568"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/Aman" />
 
     <ImageView
         android:id="@+id/imageView11"
@@ -44,7 +44,7 @@
         app:srcCompat="@drawable/women" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/Aman"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
         android:layout_marginStart="122dp"
