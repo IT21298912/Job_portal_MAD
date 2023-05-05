@@ -23,6 +23,9 @@ interface UserDao {
     @Query("SELECT * FROM user_table WHERE email = :email")
     fun getuserdata(email: String): User
 
+    @Query("DELETE FROM user_table WHERE email = :email")
+    suspend fun deleteUserByEmail(email: String)
+
 
     @Query("UPDATE user_table SET country=:country, skill=:skill, `add` =:address, phone=:phone, uname=:uname WHERE email LIKE :email")
     suspend fun update(country: String, skill: String, address: String, phone: String, uname: String, email: String)
