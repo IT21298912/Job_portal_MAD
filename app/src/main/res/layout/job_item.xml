@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:paddingTop="8dp"
     android:layout_marginHorizontal="8dp"
     android:background="@color/white"
-    android:foreground="?android:attr/selectableItemBackground">
+    android:foreground="?android:attr/selectableItemBackground"
+    android:paddingTop="8dp">
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/title_image"
@@ -15,10 +15,10 @@
         android:layout_height="80dp"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
+        android:src="@drawable/women2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/women2"
-        app:shapeAppearanceOverlay="@style/RoundCorner"/>
+        app:shapeAppearanceOverlay="@style/RoundCorner" />
 
     <View
         android:id="@+id/view3"
@@ -34,19 +34,20 @@
     <Button
         android:id="@+id/deladmin"
         android:layout_width="100dp"
-        android:layout_height="45dp"
+        android:layout_height="48dp"
         android:layout_marginEnd="8dp"
         android:backgroundTint="@color/delete"
         android:text="@string/addcheck"
         android:textSize="9dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextSizeCheck" />
 
     <CheckBox
         android:id="@+id/appjoc2"
-        android:layout_width="168dp"
-        android:layout_height="71dp"
+        android:layout_width="122dp"
+        android:layout_height="70dp"
         android:layout_marginStart="12dp"
         android:layout_marginTop="12dp"
         android:layout_marginBottom="13dp"
@@ -54,6 +55,19 @@
         app:layout_constraintBottom_toTopOf="@+id/view3"
         app:layout_constraintStart_toEndOf="@+id/title_image"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btn_Edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:src="@drawable/baseline_edit_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/deladmin"
+        app:layout_constraintStart_toEndOf="@+id/appjoc2"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck"
+        tools:src="@drawable/baseline_edit_24" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
