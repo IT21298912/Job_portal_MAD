@@ -17,6 +17,9 @@ interface UserDao {
     @Query("SELECT * FROM user_table WHERE id = :userId")
     fun getUserById(userId: Int): User
 
+    @Query("SELECT * FROM user_table")
+    fun getalluser(): User
+
     @Query("SELECT * FROM user_table WHERE email = :email AND password = :password")
     fun login(email: String, password: String): User
 

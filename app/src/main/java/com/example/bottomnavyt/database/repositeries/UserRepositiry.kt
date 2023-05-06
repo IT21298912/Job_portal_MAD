@@ -17,6 +17,8 @@ class UserRepositiry (
 
     suspend fun deleteUserByEmail(email: String) = db.getuserDao().deleteUserByEmail(email)
 
+    fun getalluser()=db.getuserDao().getalluser()
+
     suspend fun update(country :String,skill :String,address :String,phone:String,uname: String,email: String)=db.getuserDao().update(country, skill, address, phone, uname, email)
 
 
