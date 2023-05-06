@@ -13,4 +13,6 @@ class Jobrepository(
     fun getAlljobs() =db.getjobdao().getAlljobs()
     suspend fun applyjob(email:String, jid: Int?) = db.getjobdao().applyjob(email,jid)
     fun getAllappjobs(email: String) = db.getjobdao().getAllappjobs(email)
+
+    suspend fun getJobCount()=db.getjobdao().getJobCount()
 }

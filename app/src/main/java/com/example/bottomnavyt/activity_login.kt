@@ -19,7 +19,7 @@ import kotlinx.coroutines.launch
 
 class activity_login : AppCompatActivity() {
 
-    private lateinit var appDatabase: AppDatabase
+    private lateinit var appDatabase: AppDatabase      //late int variables
     private lateinit var userDao: UserDao
     private lateinit var repository: UserRepositiry
 
@@ -37,16 +37,16 @@ class activity_login : AppCompatActivity() {
         setContentView(R.layout.activity_login)
 
 
-        appDatabase = AppDatabase.getDatabase(this)
-        userDao = appDatabase.getuserDao()
+        appDatabase = AppDatabase.getDatabase(this)      //get db
+        userDao = appDatabase.getuserDao()              //set dao
         repository = UserRepositiry(appDatabase)
 
-        emailEditText = findViewById(R.id.Alogemaildt)
+        emailEditText = findViewById(R.id.Alogemaildt)       //get views
         passwordEditText = findViewById(R.id.Alogpwdt)
         loginButton = findViewById(R.id.Alogrg)
 
         loginButton.setOnClickListener {
-            val email = emailEditText.text.toString()
+            val email = emailEditText.text.toString()                   //set to strings
             val password = passwordEditText.text.toString()
 
             if (email.isNotEmpty() && password.isNotEmpty()) {
@@ -101,7 +101,7 @@ class activity_login : AppCompatActivity() {
     }
 
 
-    private fun callActivity(){
+    private fun callActivity(){           //pass the email as intent to fetch data to profile
 
         emailEditText = findViewById(R.id.Alogemaildt)
         val email = emailEditText.text.toString()
