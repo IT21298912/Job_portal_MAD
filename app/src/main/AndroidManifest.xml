@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.bottomnavyt">
-    <uses-permission android:name="android.permission.INTERNET" />
-
+    package="com.example.ytapp">
 
     <application
         android:allowBackup="true"
@@ -13,53 +11,23 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.BottomNavYT"
+        android:theme="@style/Theme.YtApp"
         tools:targetApi="31">
-
-
         <activity
-            android:name=".MainActivity2"
+            android:name=".EditUser"
             android:exported="false" />
         <activity
-            android:name=".selectmanage"
-            android:exported="false" />
-        <activity
-            android:name=".Admin_signup"
-            android:exported="false" />
-        <activity
-            android:name=".Admin_login"
-            android:exported="false" />
-        <activity
-            android:name=".AdminIntro"
-            android:exported="false" />
-        <activity
-            android:name=".activity_signup"
-            android:exported="false" />
-        <activity
-            android:name=".select"
-            android:exported="false" />
-        <activity
-            android:name=".activity_login"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="false" />
-        <activity
-            android:name=".jobmanagement"
-            android:exported="false" />
-        <activity
-            android:name=".adminManagement"
-            android:exported="false" />
-        <activity
-            android:name=".activity_main"
-            android:exported="true"
-            tools:ignore="DuplicateActivity">
+            android:name=".AllUsers"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".AddUser"
+            android:exported="true"></activity>
     </application>
 
 </manifest>
