@@ -8,15 +8,15 @@
 
     <Button
         android:id="@+id/Jman"
-        android:layout_width="193dp"
-        android:layout_height="69dp"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
         android:layout_marginStart="122dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="122dp"
         android:backgroundTint="@color/green"
         android:text="Job management"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.568"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Aman" />
 
@@ -46,13 +46,28 @@
     <Button
         android:id="@+id/Aman"
         android:layout_width="wrap_content"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
         android:layout_marginStart="122dp"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="36dp"
         android:layout_marginEnd="122dp"
         android:backgroundTint="@color/green"
         android:text="Admin management"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView12" />
+
+    <Button
+        android:id="@+id/uman"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="167dp"
+        android:backgroundTint="@color/green"
+        android:text="User Management"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.467"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Jman" />
 </androidx.constraintlayout.widget.ConstraintLayout>

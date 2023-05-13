@@ -4,21 +4,24 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.bottomnavyt.activity_login
-import com.example.bottomnavyt.database.daos.Admindao
+import com.example.bottomnavyt.Admin_login
 import com.example.bottomnavyt.database.daos.UserDao
 import com.example.bottomnavyt.database.daos.jobdao
-import com.example.bottomnavyt.database.models.Admin
 import com.example.bottomnavyt.database.models.User
 import com.example.bottomnavyt.database.models.job
+import com.example.mad2.db.Admin
+import com.example.mad2.db.AdminDao
+import kotlinx.coroutines.CoroutineScope
 
-@Database(entities = [User :: class,job::class,Admin::class], version = 7)
+@Database(entities = [User :: class,job::class, Admin::class], version = 6)
 abstract class AppDatabase : RoomDatabase(){
 
     abstract fun getuserDao() : UserDao
     abstract fun getjobdao() : jobdao
 
-    abstract fun getAdmindao() : Admindao
+    abstract fun getAdmindao() : AdminDao
+
+
 
     companion object{
 

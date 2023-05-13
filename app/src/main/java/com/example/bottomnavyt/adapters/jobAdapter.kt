@@ -10,9 +10,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.bottomnavyt.R
 import com.example.bottomnavyt.database.AppDatabase
-import com.example.bottomnavyt.database.models.Admin
 import com.example.bottomnavyt.database.models.job
-import com.example.bottomnavyt.database.repositeries.Adminrepository
 import com.example.bottomnavyt.database.repositeries.Jobrepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

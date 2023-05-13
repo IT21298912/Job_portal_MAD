@@ -8,10 +8,7 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import com.example.bottomnavyt.database.AppDatabase
-import com.example.bottomnavyt.database.daos.Admindao
-import com.example.bottomnavyt.database.daos.UserDao
-import com.example.bottomnavyt.database.repositeries.Adminrepository
-import com.example.bottomnavyt.database.repositeries.UserRepositiry
+import com.example.mad2.db.AdminDao
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -19,8 +16,8 @@ import kotlinx.coroutines.launch
 class Admin_login : AppCompatActivity() {
 
     private lateinit var appDatabase: AppDatabase
-    private lateinit var admindao: Admindao
-    private lateinit var repository: Adminrepository
+    private lateinit var admindao: AdminDao
+
 
     private lateinit var emailEditText: EditText
     private lateinit var passwordEditText: EditText
@@ -34,7 +31,7 @@ class Admin_login : AppCompatActivity() {
 
         appDatabase = AppDatabase.getDatabase(this)
         admindao = appDatabase.getAdmindao()
-        repository = Adminrepository(appDatabase)
+
 
         emailEditText = findViewById(R.id.Alogemaildt)
         passwordEditText = findViewById(R.id.Alogpwdt)
@@ -45,7 +42,7 @@ class Admin_login : AppCompatActivity() {
             val password = passwordEditText.text.toString()
 
             if (email.isNotEmpty() && password.isNotEmpty()) {
-                loginUser(email, password,repository)
+                loginUser(email, password,admindao)
 
 
             }
@@ -55,9 +52,9 @@ class Admin_login : AppCompatActivity() {
 
     }
 
-    private fun loginUser(email: String, password: String,repositiry: Adminrepository) {
+    private fun loginUser(email: String, password: String,dao: AdminDao) {
         lifecycleScope.launch(Dispatchers.IO) {
-            val user = repositiry.login(email, password)
+            val user = dao.login(email, password)
 
             runOnUiThread {
                 if (user != null) {

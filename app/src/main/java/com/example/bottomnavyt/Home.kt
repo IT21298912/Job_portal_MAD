@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -33,6 +34,11 @@ class Home : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+
+
+
+
+
     }
 
     override fun onCreateView(
@@ -78,6 +84,7 @@ class Home : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(ui)
 
         val addjob = view.findViewById<Button>(R.id.addjob)
+        val ccount = view.findViewById<TextView>(R.id.ccoont)
 
 
         addjob.setOnClickListener {
@@ -90,6 +97,17 @@ class Home : Fragment() {
         CoroutineScope(Dispatchers.IO).launch {
             val data = repository.getAlljobs()
             adapter.setData(data, ui)
+        }
+
+
+
+        CoroutineScope(Dispatchers.IO).launch {
+
+            val count =repository.getJobCount()
+
+            ccount.setText(count.toString())
+
+
         }
 
 

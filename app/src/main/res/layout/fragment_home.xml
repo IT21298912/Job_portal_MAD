@@ -52,5 +52,24 @@
         android:backgroundTint="@color/green"
         android:text="Add Job" />
 
+    <TextView
+        android:id="@+id/ccoont"
+        android:layout_width="83dp"
+        android:layout_height="52dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="150dp"
+        android:text="TextView"
+        android:textColor="@color/design_default_color_background"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="130dp"
+        android:text="Job count"
+        android:textColor="@color/design_default_color_background" />
+
 
 </FrameLayout>

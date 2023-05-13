@@ -25,4 +25,9 @@ interface jobdao {
 
     @Query("SELECT * From job_table WHERE uemail=:email")   //to do is like table -Entity
     fun getAllappjobs(email: String): List<job>
+
+
+    @Query("SELECT COUNT(*) FROM job_table")
+    suspend fun getJobCount(): Int
+
 }

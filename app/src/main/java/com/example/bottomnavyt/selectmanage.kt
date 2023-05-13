@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import com.example.bottomnavyt.admin.AdminActivity
 
 class selectmanage : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -14,7 +15,7 @@ class selectmanage : AppCompatActivity() {
         val adminman = findViewById<Button>(R.id.Aman)
 
         adminman.setOnClickListener(){
-            val Intent = Intent(this,adminManagement::class.java)
+            val Intent = Intent(this,AdminActivity::class.java)
             startActivity(Intent)
 
         }
@@ -27,5 +28,15 @@ class selectmanage : AppCompatActivity() {
             startActivity(Intent)
 
         }
+
+        val uman = findViewById<Button>(R.id.uman)
+
+        uman.setOnClickListener(){
+            val Intent = Intent(this,com.example.bottomnavyt.usermanagement.AllUsers::class.java)
+            startActivity(Intent)
+
+        }
+
+
     }
 }

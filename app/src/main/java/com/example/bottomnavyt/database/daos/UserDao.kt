@@ -1,9 +1,6 @@
 package com.example.bottomnavyt.database.daos
 
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.Query
+import androidx.room.*
 import com.example.bottomnavyt.database.models.User
 
 @Dao
@@ -16,6 +13,13 @@ interface UserDao {
 
     @Query("SELECT * FROM user_table WHERE id = :userId")
     fun getUserById(userId: Int): User
+
+    @Query("SELECT * FROM user_table")
+    fun getalluser(): List<User>
+
+
+    @Update
+    fun updateU(user: User)
 
     @Query("SELECT * FROM user_table WHERE email = :email AND password = :password")
     fun login(email: String, password: String): User

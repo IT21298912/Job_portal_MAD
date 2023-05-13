@@ -6,12 +6,8 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.example.bottomnavyt.database.AppDatabase
-import com.example.bottomnavyt.database.daos.Admindao
-import com.example.bottomnavyt.database.daos.UserDao
-import com.example.bottomnavyt.database.models.Admin
-import com.example.bottomnavyt.database.models.User
-import com.example.bottomnavyt.database.repositeries.Adminrepository
-import com.example.bottomnavyt.database.repositeries.UserRepositiry
+import com.example.mad2.db.Admin
+import com.example.mad2.db.AdminDao
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -21,8 +17,8 @@ class Admin_signup : AppCompatActivity() {
 
 
     private lateinit var appDatabase: AppDatabase
-    private lateinit var admindao: Admindao
-    private lateinit var repository: Adminrepository
+    private lateinit var admindao: AdminDao
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,14 +27,13 @@ class Admin_signup : AppCompatActivity() {
 
         appDatabase = AppDatabase.getDatabase(this)
         admindao = appDatabase.getAdmindao()
-        repository = Adminrepository(appDatabase)
 
 
         val signupbtn = findViewById<Button>(R.id.Asigbtn)
 
         signupbtn.setOnClickListener{
 
-            writeData(repository)
+            writeData(admindao)
 
 
         }
@@ -46,7 +41,7 @@ class Admin_signup : AppCompatActivity() {
 
     }
 
-    private fun writeData(repository:Adminrepository){
+    private fun writeData(dao: AdminDao){
 
         val nameEditText = findViewById<EditText>(R.id.Anamedt)
         val emailEditText = findViewById<EditText>(R.id.Aemaiedt)
@@ -65,7 +60,7 @@ class Admin_signup : AppCompatActivity() {
 
             CoroutineScope(Dispatchers.IO).launch {        //call the methods inside couroutine
 
-                repository.insert(Admin(name, email, password, repassword))
+                dao.insertAdmin(Admin(null, name, email, password))
             }
 
 
