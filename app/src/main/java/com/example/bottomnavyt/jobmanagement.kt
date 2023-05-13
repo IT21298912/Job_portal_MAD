@@ -1,10 +1,12 @@
 package com.example.bottomnavyt
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.InputType
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -17,6 +19,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class jobmanagement : AppCompatActivity() {
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_jobmanagement)
@@ -40,6 +43,15 @@ class jobmanagement : AppCompatActivity() {
             val data = repository.getAlljobs()
             adapter.setData(data, ui)
         }
+
+        val cco=findViewById<TextView>(R.id.ccount)
+
+
+        CoroutineScope(Dispatchers.IO).launch {
+            val count = repository.getjobcount()
+            cco.setText(count.toString())
+        }
+
 
 
     }

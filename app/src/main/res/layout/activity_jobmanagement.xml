@@ -53,4 +53,33 @@
         app:layout_constraintHorizontal_bias="0.237"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/ccount"
+        android:layout_width="79dp"
+        android:layout_height="29dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="32dp"
+        android:text="Job count"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/jobrecle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textView13"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="109dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="208dp"
+        android:layout_marginBottom="24dp"
+        android:text="Total Jobs"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/jobrecle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.964" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
