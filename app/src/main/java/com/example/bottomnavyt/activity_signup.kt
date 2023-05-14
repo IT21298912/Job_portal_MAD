@@ -1,5 +1,6 @@
 package com.example.bottomnavyt
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -117,6 +118,10 @@ class activity_signup : AppCompatActivity() {
         builder.setMessage(message)
         builder.setPositiveButton("OK") { dialog, which ->
             // Do something when the "OK" button is clicked
+
+            val Intent = Intent(this@activity_signup, activity_login::class.java)
+            startActivity(Intent)
+
         }
         val dialog = builder.create()
         dialog.show()

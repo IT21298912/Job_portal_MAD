@@ -5,15 +5,20 @@ import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.view.Window
 import android.view.WindowManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.lifecycleScope
 import com.example.bottomnavyt.database.AppDatabase
 import com.example.bottomnavyt.database.daos.UserDao
 import com.example.bottomnavyt.database.repositeries.UserRepositiry
+import com.example.bottomnavyt.validation.ValidationResult
+import com.example.bottomnavyt.validation.modelval.FormData
+import com.example.bottomnavyt.validation.modelval.logForm
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -28,6 +33,7 @@ class activity_login : AppCompatActivity() {
     private lateinit var loginButton: Button
 
     private lateinit var sharedPreferences: SharedPreferences
+    private var count=0
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,7 +56,7 @@ class activity_login : AppCompatActivity() {
             val password = passwordEditText.text.toString()
 
             if (email.isNotEmpty() && password.isNotEmpty()) {
-                loginUser(email, password,repository)
+                submit(it,repository,email,password)
 
 
             }
@@ -98,6 +104,84 @@ class activity_login : AppCompatActivity() {
 
             }
         }
+    }
+
+
+
+
+
+    fun submit(v: View, repository: UserRepositiry,email: String,password: String){
+
+        val lForm = logForm(
+            passwordEditText.text.toString(),
+            emailEditText.text.toString()
+
+        )
+
+
+        val emailvali = lForm.validateEmail()
+        val passwrdvali = lForm.validatePassword()
+
+        when (emailvali){
+
+            is ValidationResult.Valid ->{
+                count ++
+
+
+            }
+            is ValidationResult.Invalid ->{
+                emailEditText.error = emailvali.errorMessage
+
+            }
+            is ValidationResult.Empty ->{
+                emailEditText.error = emailvali.errorMessage
+
+            }
+
+
+        }
+
+        when (passwrdvali){
+
+            is ValidationResult.Valid ->{
+                count ++
+
+
+            }
+            is ValidationResult.Invalid ->{
+                passwordEditText.error = passwrdvali.errorMessage
+
+            }
+            is ValidationResult.Empty ->{
+                passwordEditText.error = passwrdvali.errorMessage
+
+            }
+
+
+        }
+
+
+        if(count==4){
+            displayAlert("Success","You have successfully Login",email, password)
+
+        }
+
+
+
+
+    }
+
+
+    fun displayAlert(title:String, message:String,email: String,password: String){
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle(title)
+        builder.setMessage(message)
+        builder.setPositiveButton("OK") { dialog, which ->
+            // Do something when the "OK" button is clicked
+            loginUser(email, password,repository)
+        }
+        val dialog = builder.create()
+        dialog.show()
     }
 
 
