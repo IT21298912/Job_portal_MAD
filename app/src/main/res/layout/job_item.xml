@@ -34,19 +34,20 @@
     <Button
         android:id="@+id/deladmin"
         android:layout_width="100dp"
-        android:layout_height="45dp"
+        android:layout_height="48dp"
         android:layout_marginEnd="8dp"
         android:backgroundTint="@color/delete"
         android:text="@string/addcheck"
         android:textSize="9dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextSizeCheck" />
 
     <CheckBox
         android:id="@+id/appjoc2"
-        android:layout_width="168dp"
-        android:layout_height="71dp"
+        android:layout_width="138dp"
+        android:layout_height="70dp"
         android:layout_marginStart="12dp"
         android:layout_marginTop="12dp"
         android:layout_marginBottom="13dp"
@@ -54,6 +55,21 @@
         app:layout_constraintBottom_toTopOf="@+id/view3"
         app:layout_constraintStart_toEndOf="@+id/title_image"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btn_Edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:src="@drawable/baseline_edit_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/deladmin"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/appjoc2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.489"
+        tools:ignore="SpeakableTextPresentCheck"
+        tools:src="@drawable/baseline_edit_24" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

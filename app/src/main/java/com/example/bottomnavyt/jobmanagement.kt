@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.text.InputType
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -39,6 +40,13 @@ class jobmanagement : AppCompatActivity() {
         CoroutineScope(Dispatchers.IO).launch {
             val data = repository.getAlljobs()
             adapter.setData(data, ui)
+        }
+
+        val cco=findViewById<TextView>(R.id.ccount)
+
+        CoroutineScope(Dispatchers.IO).launch {
+            val count = repository.getJobCount()
+            cco.setText(count.toString())
         }
 
 
