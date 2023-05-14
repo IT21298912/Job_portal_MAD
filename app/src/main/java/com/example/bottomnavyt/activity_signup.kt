@@ -131,8 +131,8 @@ class activity_signup : AppCompatActivity() {
     fun submit(v: View,repository: UserRepositiry){
 
         val myForm = FormData(
-            semail.text.toString(),
             sname.text.toString(),
+            semail.text.toString(),
             passwrd.text.toString(),
             repasswrd.text.toString()
 
