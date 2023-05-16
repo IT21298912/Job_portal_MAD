@@ -13,7 +13,7 @@ class logForm(
         return if(password.isEmpty()){
             ValidationResult.Empty("password  is empty")
         }else if(password.length<6){
-            ValidationResult.Invalid("password should have at least 10 characters")
+            ValidationResult.Invalid("password should have at least 6 characters")
         }else{
             ValidationResult.Valid
         }
